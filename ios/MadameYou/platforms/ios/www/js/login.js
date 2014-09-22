@@ -1145,7 +1145,7 @@ function signupPageActions() {
         
         '<div class="acceptTermsDiv">'+
         '<input type="checkbox" id="agreeToTerms" name="agreeToTerms" style="float:left;">'+
-        '<div class="agreeToTerms-label" id="agreeToTerms-label">I accept the Myavana Terms of Service</div>'+
+        '<div class="agreeToTerms-label" id="agreeToTerms-label">I accept the Myavana <span id="myOptionsTerms">Terms of Service</span></div>'+
         '</div>'+
         '</div>'+
     '</div>';
