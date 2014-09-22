@@ -1,0 +1,3949 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+@font-face {
+    font-family: "IdealSans Thin";
+    src: url("fonts/IdealSans-Book-Pro.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "MrEavesSan";
+    src: url("fonts/MrEavesSanOT-Reg.otf");
+}
+
+@font-face {
+    font-family: "IdealSans Thin";
+    src: url("fonts/IdealSans-Thin-Pro.otf");
+}
+
+
+input[type="date"]
+{
+    background: rgba(0, 0, 0, 0) !important;
+    border: none !important;
+    outline: none !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#cccccc !important;
+}
+
+.loginTextBtn {
+    width:20% !important;
+    height:8% !important;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.signupTextBtn {
+    min-height:16px;
+    width:auto;
+    margin-left:auto;
+    margin-right:auto;
+    font-weight:bold;
+    font-size:135% !important;
+    color:#bdbdbc;
+    margin-top:25px;
+    z-index:5;
+}
+
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+/* Login Styling */
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    
+    margin: 0;
+    padding: 0;
+    color:#ffffff;
+    font-family: 'IdealSans Thin', sans-serif;
+
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+div.loginPage {
+    overflow-x:hidden;
+    overflow-y:hidden;
+    width:100%;
+    height:100%;
+}
+
+div.container {
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.loginBack{
+    width:100%;
+    height:100%;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+
+.loginSection {
+    
+    position:absolute;
+    text-align:center;
+    top:60%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:70%;
+    overflow-y:auto;
+    left:15%;
+    
+}
+
+.signupSection1 {
+    
+    position:absolute;
+    text-align:center;
+    top:27%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:70%;
+    overflow-y:auto;
+    left:15%;
+    
+}
+
+
+div.stlyistDetDivSU {
+    position:absolute;
+    width:90%;
+    height:60%;
+    left:5%;
+    top:20%;
+    -webkit-box-shadow: 1px 1px 1px 2px rgba(35, 31, 32, .39);
+    box-shadow: 1px 1px 1px 2px rgba(35, 31, 32, .39);
+    background:black;
+}
+
+.profBkBtn, .searchBkBtn, .headlinesBkBtn, .teaPageBkBtn {
+    position:absolute;
+    text-align:center;
+    top:1%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:14%;
+    height:8%;
+    left:4%;
+    /*background:red;*/
+}
+
+.addLookBtn {
+    position:absolute;
+    text-align:center;
+    top:1%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:14%;
+    height:7%;
+    right:3%;
+    /*background:red;*/
+    opacity:0.4;
+}
+
+.submitLookBtn {
+    position:absolute;
+    text-align:center;
+    top:2%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:37%;
+    height:5%;
+    right:1%;
+    /*background:red;*/
+    opacity:0.4;
+}
+
+.profUserName {
+    width:100%;
+    float:left;
+    text-align:center;
+    margin-top:2%;
+    /*background:red;*/
+    /*opacity:0.4;*/
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#000000 !important;
+    font-size:130% !important;
+    font-weight:bold !important;
+}
+
+.profStylistSpecialty {
+
+width:94% !important;
+    margin-left:3% !important;
+    margin-right:3% !important;
+float:left;
+text-align:center !important;
+margin-top:2%;
+    margin-bottom:1%;
+    color:#942c91 !important;
+    font-size:100% !important;
+
+}
+
+.editProfHairCategory {
+    width:100%;
+    float:left;
+    text-align:center;
+    margin-top:4%;
+    /*background:red;*/
+    /*opacity:0.4;*/
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#000000 !important;
+    font-size:145% !important;
+}
+
+.editProfChangePassword {
+    width:100%;
+    float:left;
+    text-align:center;
+    margin-top:3%;
+    /*background:red;*/
+    /*opacity:0.4;*/
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#a9afac !important;
+    font-size:125% !important;
+ 
+}
+
+textarea.leaveAComment {
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110% !important;
+    top:25%;
+    position:absolute;
+    left:10%;
+    width:80%;
+    -webkit-box-shadow: inset -1px 1px px 3px rgba(35, 31, 32, .50);
+    box-shadow: inset -1px 1px 2px 3px rgba(35, 31, 32, .50);
+}
+
+.leaveCommentChangePrefUpdateBtnDiv {
+    position:absolute;
+    top:40%;
+    left:25%;
+    width:50%;
+    background:transparent;
+    border-radius:2px;
+}
+
+
+.leaveCommentHead {
+    text-align:left;
+    top:18%;
+    position:absolute;
+    width:90%;
+    left:5%;
+    /*background:red;*/
+    /*opacity:0.4;*/
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#000000 !important;
+    font-size:145% !important;
+}
+
+div.editHairCategory select {
+    width:100% !important /* this percentage effectively extends the drop down button out of view */;
+    background-color:transparent /* this hides the select's background making any styling visible from the div */;
+    background-image:none;
+    -webkit-appearance: none /* this is required for Webkit browsers */;
+    border:none;
+    box-shadow:none;
+    padding:0.2em 0.4em; /* padding should be added to the select, not the div */
+    font-size:75% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+
+
+div.editHairCategory {    
+    position:absolute;
+    top:20%;
+    left:15%;
+    width:70%;
+    background: white url('../img/chooseHairStyleSelectBG.png') no-repeat bottom right;
+    background-size: cover;
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#000000 !important;
+    font-size:145% !important;
+
+    
+}
+
+input.editProfileInput {
+    width:64%;
+    margin-left:16.5%;
+    float:left;
+    text-align:left;
+    margin-top:2%;
+    background:url('../img/signUpInput.png') center center !important;
+    background-size: cover !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#000000 !important;
+    font-size:145% !important;
+}
+
+input.editProfileInput::-webkit-input-placeholder {
+    font-size:100% !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.editProfileInput:-moz-placeholder {
+    font-size:100% !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+.editProfStylistSpecialtySelectDiv {
+    width:70%;
+    margin-left:15%;
+    float:left;
+    text-align:center;
+    margin-top:2%;
+    background: white url('../img/chooseHairStyleSelectBG.png') no-repeat bottom right;
+    background-size: cover;
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#000000 !important;
+    font-size:145% !important;
+    
+}
+
+div.editProfStylistSpecialtySelectDiv select {
+    width:100% !important /* this percentage effectively extends the drop down button out of view */;
+    background-color:transparent /* this hides the select's background making any styling visible from the div */;
+    background-image:none;
+    -webkit-appearance: none /* this is required for Webkit browsers */;
+    border:none;
+    box-shadow:none;
+    padding:0.2em 0.4em; /* padding should be added to the select, not the div */
+    font-size:75% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+.editAboutMe {
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110% !important;
+    
+    -webkit-box-shadow: inset -1px 1px px 3px rgba(35, 31, 32, .50);
+    box-shadow: inset -1px 1px 2px 3px rgba(35, 31, 32, .50);
+}
+
+
+
+div.fadeMe {
+    display: none;  /* ensures it’s invisible until it’s called */
+    position: absolute;  /* makes the div go into a position that’s absolute to the browser viewing area */
+    left: 0%; /* makes the div span all the way across the viewing area */
+    top: 0%; /* makes the div span all the way across the viewing area */
+    background-color: black;
+    -moz-opacity: 0.7; /* makes the div transparent, so you have a cool overlay effect */
+    opacity: .70;
+    filter: alpha(opacity=70);
+    width: 100%;
+    height: 100%;
+    z-index: 90; /* makes the div the second most top layer, so it’ll lay on top of everything else EXCEPT for divs with a higher z-index (meaning the #overlay ruleset) */
+}
+
+div.bigPhotoOverlay {
+    display: none; /* ensures it’s invisible until it’s called */
+    position: absolute; /* makes the div go into a position that’s absolute to the browser viewing area */
+    left: 5%; /* positions the div half way horizontally */
+    top: 15%; /* positions the div half way vertically */
+
+    border: 2px solid black;
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    background-color: #ffffff;
+    width: 90%;
+    overflow-y:auto;
+    z-index: 100; /* makes the div the top layer, so it’ll lay on top of the other content */
+}
+
+
+.largeViewDiv {
+    float:left;
+    width:100%;
+    overflow-y:auto;
+    -webkit-box-shadow: 1px 1px 1px 2px rgba(35, 31, 32, .39);
+    box-shadow: 1px 1px 1px 2px rgba(35, 31, 32, .39);
+    background:black;
+}
+
+
+img.bigPreviewPhoto {
+    float:left;
+    width:84%;
+    margin-left:8%;
+}
+
+.profPicDiv {
+    float:left;
+    margin-left:30%;
+    top:16%;
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(35, 31, 32, .39);
+    box-shadow: 1px 1px 1px 1px rgba(35, 31, 32, .39);
+    background:transparent;
+    border-radius:2px;
+    -webkit-box-shadow: inset -1px 1px px 3px rgba(35, 31, 32, .50);
+    box-shadow: inset -1px 1px px 3px rgba(35, 31, 32, .50);
+}
+
+.editProfPicDiv {
+    float:left;
+    margin-left:30%;
+    margin-top:4%;
+    width:40%;
+    background:transparent;
+    border-radius:2px;
+    z-index:4;
+}
+
+.editProfUpload {
+    float:left;
+    margin-left:25%;
+    margin-top:5%;
+    width:50%;
+    background:transparent;
+    border-radius:2px;
+}
+
+.friendsSearchBox {
+    padding-top:3px;
+    width:98%;
+    height:35px;
+    margin-left:1%;
+    float:left;
+}
+
+input.friendSearchInput {
+	width:82%;
+    margin-left:2px;
+	height:25px;
+    font-size:115% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    background:transparent !important;
+	border:none !important;
+    float:left;
+}
+
+input.addHLCommentDiv {
+	width:82%;
+    padding-right:2%;
+    padding-left:2%;
+    margin-top:2%;
+    font-size:115% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    background:transparent !important;
+	border:none !important;
+    float:left;
+}
+
+.addCommentBtn {
+    float:left;
+    width:14%;
+    margin-top:3%;
+}
+
+.HLcommentDiv {
+    width:100%;
+    float:left;
+    overflow-y:auto;
+}
+
+.cancelSearchImg {
+    height:25px;
+    width:6%;
+    float:left;
+    text-align:center;
+}
+
+.friendSearchImg {
+    height:25px;
+    width:6%;
+    float:right;
+    text-align:center;
+}
+
+img.smallSearchCancel {
+    width:100%;
+    padding-top:5px;
+    float:right;
+}
+
+img.addLookPlaceholder {
+    width:100%;
+}
+
+.newLookImg {
+    width:100%;
+}
+
+.addLookPlaceholderDiv {
+    width:80%;
+    position:absolute;
+    left:10%;
+    top:12%;
+    background:transparent;
+    border-radius:2px;
+    
+}
+
+div.stylistSUSelced {
+    position:absolute;
+    top:65%;
+    width:90%;
+    
+    left:5%;
+    background: transparent url('../img/chooseHairStyleSelectBG.png') no-repeat bottom right;
+    background-size: contain;
+    overflow-x:hidden; /* this hides the select's drop button */
+    overflow-y:auto;
+    padding:0;
+    margin:0;
+    
+    
+}
+
+select.stylistSelectOpt {
+    width:100% /* this percentage effectively extends the drop down button out of view */;
+    float:left;
+    background-color:transparent /* this hides the select's background making any styling visible from the div */;
+    background-image:none;
+    -webkit-appearance: none /* this is required for Webkit browsers */;
+    border:none;
+    box-shadow:none;
+    font-size:90% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    overflow-y:auto !important;
+    margin-top:10px !important;
+    margin-bottom:-3px !important;
+    line-height:24px !important;
+    opacity:0.4;
+    
+}
+
+div.uploadStyleDiv {
+    position:absolute;
+    top:61%;
+    width:80%;
+    left:11%;
+    background: transparent url('../img/chooseHairStyleSelectBG.png') no-repeat bottom right;
+    background-size: contain;
+    overflow-x:hidden; /* this hides the select's drop button */
+    overflow-y:auto;
+    padding:0;
+    margin:0;
+    
+    
+}
+
+select.uploadLookHairstyle {
+    width:100% /* this percentage effectively extends the drop down button out of view */;
+    background-color:transparent /* this hides the select's background making any styling visible from the div */;
+    background-image:none;
+    -webkit-appearance: none /* this is required for Webkit browsers */;
+    border:none;
+    box-shadow:none;
+    font-size:120% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    overflow-y:auto !important;
+    margin-top:10px;
+    line-height:25px;
+}
+
+input.addLookCaption {
+    
+    position:absolute;
+    top:72%;
+    left:11%;
+    width:76%;
+    text-align:left;
+    
+    
+    font-size:120% !important;
+    color:#a9afac !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+    -moz-box-shadow:inset 1px 1px 29px #777777;
+    -webkit-box-shadow:inset 1px 1px 29px #777777;
+    box-shadow:inset 1px 1px 29px #777777;
+
+}
+
+input.addLookCaption::-webkit-input-placeholder {
+    font-size:120% !important;
+    color:#a9afac;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.addLookCaption:-moz-placeholder {
+    font-size:120% !important;
+    color:#a9afac;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+
+img.lookUploadBtn {
+    top:81%;
+    position:absolute;
+    width:44%;
+    left:28%;
+}
+
+img.doneUploadBtn {
+    top:88%;
+    position:absolute;
+    width:44%;
+    left:28%;
+}
+
+.aboutMeDiv {
+    float:left;
+    margin-left:10%;
+    top:42%;
+    width:80%;
+    background:transparent;
+    
+    
+}
+
+.profDetRowT  {
+    width:96%;
+    margin-left:2%;
+    text-align:center;
+    float:left;
+    color: #000000 !important;
+    overflow-y:auto;
+    margin-top:3%;
+    border-bottom:1px solid #bdbdbc;
+    padding-bottom:3%;
+}
+
+.profDetRowB {
+    width:96%;
+    margin-left:2%;
+    float:left;
+    color: #000000 !important;
+    overflow-y:auto;
+    margin-top:1%;
+    padding-top:2%;
+    
+}
+
+.myProfLeftTop {
+    float:left;
+    width:50%;
+    text-align:center;
+    font-size:115% !important;
+    font-weight:bold !important;
+}
+
+.myProfRightTop {
+    float:right;
+    width:50%;
+    text-align:center;
+    font-size:115% !important;
+    font-weight:bold !important;
+}
+
+.profLeftTop {
+    float:left;
+    width:40%;
+    text-align:center;
+    font-size:115% !important;
+    font-weight:bold !important;
+}
+
+.profMidTop {
+    float:left;
+    width:30%;
+    text-align:center;
+    font-size:115% !important;
+}
+
+.profRightTop {
+    float:left;
+    width:30%;
+    text-align:center;
+}
+
+.profDetRow1  {
+    width:100%;
+    text-align:center;
+    float:left;
+    color: #000000 !important;
+    overflow-y:auto;
+    margin-top:3%;
+}
+
+.profLooksVal {
+    margin-left:3%;
+    margin-right:3%;
+    font-size:115% !important;
+    font-weight:bold !important;
+    color:#37424a !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    text-align:left;
+    display:inline-block;
+}
+
+.profLooksLabel {
+    margin-left:3%;
+    margin-right:3%;
+    font-size:115% !important;
+    color:#37424a !important;
+    font-weight:bold !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    text-align:left;
+    display:inline-block;
+}
+
+img.profFriendsIcon {
+    width:30%;
+    margin-top:-3% !important;
+}
+
+img.myProfFriendsIcon {
+    width:25%;
+    margin-top:-3% !important;
+}
+
+img.profileFollowBtn {
+    width:96%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+img.profAboutImg {
+    width:40%;
+    float:right;
+    margin-top:2%;
+    padding-bottom:3%;
+}
+
+.profAboutMeTxt {
+    
+    margin-left:auto;
+    margin-right:auto;
+    color:#000000 !important;
+    font-size:115%;
+    line-height:18px;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:bold !important;
+    width:96%;
+    max-height:65%;
+    overflow-y:hidden;
+    text-overflow:ellipsis;
+    border-bottom:1px solid #bdbdbc;
+    padding-bottom:3%;
+}
+
+.profHairCategory {
+    
+    margin-left:auto;
+    margin-right:auto;
+    color:#37424a !important;
+    font-size:115% !important;
+    line-height:18px;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:bold;
+    width:88%;
+    max-height:65%;
+    overflow-y:hidden;
+    text-overflow:ellipsis;
+}
+
+.signUpTypeDiv {
+    position:absolute;
+    top:45%;
+    width:66%;
+    left:17%;
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(35, 31, 32, .39);
+    box-shadow: 1px 1px 1px 1px rgba(35, 31, 32, .39);
+    background:transparent;
+    border-radius:2px;
+    
+}
+
+img.signUpTypeBox {
+    width:100%;
+    height:55%;
+    
+}
+
+.typeRelaxed {
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#aeafaf;
+    position:absolute;
+    top:5%;
+    left:5%;
+    width:90%;
+    font-size:155% !important;
+    text-align:center;
+}
+
+.typeNatural {
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#fff;
+    position:absolute;
+    top:17%;
+    left:5%;
+    width:90%;
+    font-size:155% !important;
+    text-align:center;
+}
+
+.typeTransitioning {
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#aeafaf;
+    position:absolute;
+    top:29%;
+    left:5%;
+    width:90%;
+    font-size:155% !important;
+    text-align:center;
+}
+
+.stylistDetSUHeading {
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#aeafaf;
+    position:absolute;
+    top:5%;
+    left:5%;
+    width:90%;
+    font-size:155% !important;
+    text-align:center;
+}
+
+
+.profilePhotosSection {
+    float:left;
+    width:88%;
+    min-height:60px;
+    top:58%;
+    margin-left:7%;
+    padding-top:2%;
+}
+
+.discoverPhotosSection {
+    float:left;
+    width:94%;
+    min-height:60px;
+    margin-left:3%;
+    
+}
+
+.discoveryDetailsPicture {
+    float:left;
+    width:96%;
+    margin-left:2%;
+    margin-top:2%;
+    
+}
+
+.largeDiscoverPic {
+    
+    width:100%;
+    float:left;
+}
+
+.HLCaptionDiv {
+    overflow-y:auto;
+    overflow-x:hidden;
+    width:96%;
+    padding-left:2%;
+    padding-right:3%;
+    float:left;
+}
+
+.largeProfileCaption {
+    width:78%;
+    text-align:left;
+    margin-top:1%;
+    float:left;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110% !important;
+    overflow-x:hidden;
+    overflow-y:auto;
+    color:#000000 !important;
+    
+}
+
+.largeOtherProfileCaption {
+    width:90%;
+    text-align:left;
+    margin-top:1%;
+    float:left;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110% !important;
+    overflow-x:hidden;
+    overflow-y:auto;
+    color:#000000;
+}
+
+/*.largeProfileCaption {
+    width:100%;
+    text-align:left;
+    float:left;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:120% !important;
+}*/
+
+.largeHLWebsite {
+    max-width:300px !important;
+    text-align:center;
+    text-overflow:ellipsis !important;
+    overflow:hidden !important;
+    white-space: nowrap;
+    word-wrap:break-word;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+.largeHLCaptionTextDisc {
+    border-top:1px solid #000000;
+    max-width:300px !important;
+    text-align:left;
+    text-overflow:ellipsis !important;
+    overflow-x:hidden !important;
+    overflow-y:auto;
+    word-wrap:break-word;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+.discoveryDetailsNumDiv {
+    
+    margin-top:3px;
+    padding-bottom:2%;
+    width:96%;
+    padding-left:2%;
+    padding-right:3%;
+    float:left;
+    border-bottom:1px solid #000000;
+    border-top:1px solid #000000;
+}
+
+.HLInputCommentDiv {
+    width:100%;
+    border-top:1px solid #000000;
+    border-bottom:1px solid #000000;
+    position:absolute !important;
+    padding:0 !important;
+    margin:0 !important;
+    bottom:.2px !important;
+    left:0 !important;
+    background:#fff;
+    z-index:20;
+}
+
+.discCommentCount {
+    
+    float:left;
+    width:20px;
+    text-align:center;
+    font-family:'MrEavesSan', sans-serif !important;
+    color:black !important;
+    margin-top:1%;
+    font-size:100% !important;
+    
+}
+
+.profileGroupDiv {
+    
+    float:left;
+    margin-left:1%;
+    margin-top:2%;
+    width:98%;
+    overflow-y:auto;
+    background:transparent;
+    
+}
+
+.profLooksRow {
+    float:left;
+    width:100%;
+    overflow-y:auto;
+    margin-bottom:4%;
+    
+}
+
+.leftLookDiv {
+    width:30%;
+    float:left;
+    height:auto;
+}
+
+.midLookDiv {
+    width:30%;
+    float:left;
+    height:auto;
+    margin-left:5.5%;
+}
+
+.rightLookDiv {
+    width:30%;
+    float:right;
+    height:auto;
+}
+
+.lookPic {
+    float:left;
+    width:100%;
+    
+}
+
+.lookRPic {
+    float:right;
+    width:50%;
+    
+}
+
+.favoriteVal {
+    position:absolute;
+    top:4%;
+    left:6.5%;
+    color:#37424a;
+    font-size:90%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:bold;
+    max-width:20px;
+    text-align:center;
+}
+
+.savedLooksVal {
+    position:absolute;
+    top:4%;
+    left:28%;
+    color:#37424a;
+    font-size:90%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:bold;
+    width:28px;
+    text-align:right;
+}
+
+.friendsVal {
+    position:absolute;
+    top:4%;
+    left:63%;
+    color:#37424a;
+    font-size:90%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:bold;
+    width:30px;
+    text-align:right;
+    
+}
+
+.myWrapperStd {
+    position:absolute; z-index:1;
+	top:9%; bottom:.2px; left:0px; right:0px;
+	width:100%;
+    max-width:100%;
+	margin-top:auto;
+	margin-bottom:auto;
+	text-align:center;
+    overflow-y:auto;
+    overflow-x:none;
+    background:transparent;
+    
+}
+
+.myWrapperScroller {
+    overflow-y:auto;
+    padding-bottom:4px;
+}
+
+.myWrapperScrollerNOPAD {
+    overflow-y:auto;
+}
+
+#myWrapperScrollerCOMMENTPAD {
+    overflow-y:auto;
+    padding-bottom:15% !important;
+    float:left;
+}
+
+.headlineItemDiv {
+    float:left;
+    width:100%;
+    margin-top:2%;
+    overflow-y:auto;
+}
+
+.hlPicGroupDiv {
+    float:left;
+    margin-left:2%;
+    margin-top:2%;
+    width:96%;
+    overflow-y:auto;
+    -webkit-box-shadow: 1px 1px 1px 2px rgba(35, 31, 32, .39);
+    box-shadow: 1px 1px 1px 2px rgba(35, 31, 32, .39);
+    background:black;
+    border-radius:4px;
+    -webkit-box-shadow: inset -2px 2px px 5px rgba(35, 31, 32, .50);
+    box-shadow: inset -2px 2px px 5px rgba(35, 31, 32, .50);
+}
+
+.hlPicGroupNone {
+    float:left;
+    margin-left:2%;
+    margin-top:4%;
+    width:96%;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:140% !important;
+    text-align:center;
+    border:none;
+    background:transparent;
+}
+
+
+
+.hlPicGroupNumDiv {
+    
+    margin-top:3px;
+    width:100%;
+    float:left;
+    
+}
+
+.hlPicGroupCapDiv {
+    
+    margin-top:3px;
+    width:100%;
+    float:left;
+    border-top:1px solid #5a5758;
+    border-bottom:1px solid #5a5758;
+    
+}
+
+.profPhotoPrevCapDiv {
+    
+    margin-top:3px;
+    width:100%;
+    float:left;
+    border-top:1px solid #5a5758;
+    border-bottom:2px solid #9a9a9a;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:140% !important;
+    
+}
+
+.profPhotoCommentDiv {
+
+    width:100%;
+    float:left;
+    
+    
+}
+
+.profPhotoCommentBtn {
+    width:70%;
+    margin-left:15%;
+    margin-right:15%;
+    float:left;
+    padding-top:3px;
+    padding-bottom:3px;
+    overflow-x:hidden;
+    text-align:center;
+    color:#9a9a9a !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:150% !important;
+}
+
+
+img.fbImg {
+    width:7%;
+    float:right;
+    margin-top:1%;
+    margin-right:2%;
+    margin-bottom:2%;
+}
+
+img.twitterImg {
+    width:8%;
+    float:right;
+    margin-top:1%;
+    margin-bottom:2%;
+}
+
+img.HLtwitterImg {
+    width:6%;
+    float:right;
+    margin-top:1%;
+}
+
+img.HLfbImg {
+    width:6%;
+    float:right;
+    margin-top:1%;
+    margin-right:3%;
+}
+
+.hlPicGroupCaption {
+    width:94%;
+    margin-left:3%;
+    float:left;
+    font-size:110% !important;
+    padding-top:2px;
+    padding-bottom:2px;
+    overflow-x:hidden;
+    overflow-y:auto;
+    
+    font-family:'MrEavesSan', sans-serif !important;
+    text-align:left;
+}
+
+img.commentImg {
+    width:6%;
+    float:right;
+    margin-right:3%;
+    margin-top:3%;
+}
+
+img.saveImg {
+    width:6%;
+    float:right;
+    margin-right:4%;
+    margin-top:1%;
+}
+
+img.commentCountImg {
+    width:6%;
+    float:left;
+    margin-top:3%;
+    margin-left:1%;
+}
+
+img.saveCountImg {
+    width:6%;
+    float:left;
+    margin-top:1%;
+    margin-left:1%;
+}
+
+img.hlReportImg {
+    width:8%;
+    float:right;
+    margin-right:2%;
+    margin-top:4%;
+}
+
+.commentCount, .saveCount {
+    margin-left:3%;
+    float:left;
+    width:20px;
+    text-align:center;
+    font-family:'MrEavesSan', sans-serif !important;
+    color:black !important;
+    margin-top:1%;
+    font-size:100% !important;
+}
+
+
+.deletePhotoBtnDiv {
+    float:right;
+    width:30%;
+    text-align:center;
+    margin-top:1%;
+}
+
+
+.hlUsername {
+    float:left;
+    height:30px;
+    line-height:30px;
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#fff;
+    width:47%;
+    font-size:125%;
+    margin-left:3%;
+    text-align:left;
+    text-overflow:ellipsis !important;
+    overflow:hidden !important;
+    white-space: nowrap !important;
+}
+
+.hlHairstyle {
+    float:right;
+    height:30px;
+    line-height:30px;
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#fff;
+    width:47%;
+    font-size:125%;
+    margin-right:1%;
+    text-align:center;
+    text-overflow:ellipsis !important;
+    overflow:hidden !important;
+    white-space: nowrap !important;
+}
+
+img.hairStyleIcon {
+
+    height:22px;
+    width:22px;
+    float:right;
+    margin-top:4px;
+    margin-right:3px;
+}
+
+.profileLookUsername {
+    float:left;
+    height:30px;
+    line-height:30px;
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#ffffff !important;
+    width:88%;
+    font-size:135%;
+    margin-left:3%;
+    text-align:left;
+}
+
+img.cancelProfileLargePhoto {
+    width:6%;
+    margin-top:2%;
+    margin-right:3%;
+    float:right;
+
+}
+
+img.deleteMyCommentImg {
+    width:6%;
+    margin-top:2%;
+    float:right;
+    
+}
+
+img.hlPic {
+    float:left;
+    width:100%;
+}
+
+img.hlPicLeft{
+    float:left;
+    width:100%;
+}
+
+img.hlPicRight {
+    float:right;
+    width:50%;
+}
+
+.homeBtnSec, .curlyBtnSec {
+    
+    position:absolute;
+    text-align:center;
+    top:13%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:35%;
+    height:20%;
+    left:7%;
+    /*background:red;*/
+    opacity:0.4;
+    
+}
+
+.leftProdBtnSec {
+    
+    position:absolute;
+    text-align:center;
+    top:15%;
+    color:#ffffff;
+    width:35%;
+    height:70%;
+    left:7%;
+    /*background:red;*/
+    opacity:0.4;
+    
+}
+
+.rightProdBtnSec {
+    
+    position:absolute;
+    text-align:center;
+    top:15%;
+    right:7%;
+    color:#ffffff;
+    width:35%;
+    height:70%;
+    /*background:blue;*/
+    opacity:0.4;
+    
+}
+
+.searchBtnSec, .curlyStylesBtnSec {
+    
+    position:absolute;
+    text-align:center;
+    top:13%;
+    right:7%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:35%;
+    height:20%;
+    /*background:blue;*/
+    opacity:0.4;
+    
+}
+
+.profileBtnSec, .straighBtnSec {
+    
+    position:absolute;
+    text-align:center;
+    top:40%;
+    left:7%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:35%;
+    height:20%;
+    /*background:green;*/
+    opacity:0.4;
+    
+}
+
+.girlFriendsBtnSec, .locdBtnSec {
+    
+    position:absolute;
+    text-align:center;
+    top:40%;
+    right:7%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:35%;
+    height:20%;
+    /*background:purple;*/
+    opacity:0.4;
+    
+}
+
+.savedLooksBtnSec, .braidsBtnSec {
+    
+    position:absolute;
+    text-align:center;
+    top:67%;
+    left:7%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:35%;
+    height:20%;
+    /*background:black;*/
+    opacity:0.4;
+    
+}
+
+.theTeaBtnSec, .twistsBtnSec {
+    
+    position:absolute;
+    text-align:center;
+    top:67%;
+    right:7%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:35%;
+    height:20%;
+    /*background:yellow;*/
+    opacity:0.4;
+    
+}
+
+.loginBtnSec {
+    position:absolute;
+    text-align:center;
+    top:83%;
+    left:2%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:46%;
+    height:17%;
+    /*background:yellow;*/
+    opacity:0.4;
+}
+
+.signUpBtnSec {
+    position:absolute;
+    text-align:center;
+    top:83%;
+    right:2%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:46%;
+    height:17%;
+    /*background:yellow;*/
+    opacity:0.4;
+}
+
+.loginBtnSec2 {
+    position:absolute;
+    text-align:center;
+    top:79.5%;
+    left:35%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:30%;
+    height:6%;
+    /*background:red;*/
+    opacity:0.4;
+}
+
+.signUpBtnSec2 {
+    position:absolute;
+    text-align:center;
+    top:89.5%;
+    left:35%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:30%;
+    height:6%;
+    /*background:yellow;*/
+    opacity:0.4;
+}
+
+img.loginBtnSec3 {
+    position:absolute;
+    text-align:center;
+    top:79.5%;
+    left:23%;
+    width:54%;
+    /*background:red;*/
+}
+
+img.signupBtnSec4 {
+    position:absolute;
+    text-align:center;
+    top:82%;
+    left:23%;
+    width:54%;
+    /*background:red;*/
+}
+
+img.signUpBtnSec3 {
+    position:absolute;
+    text-align:center;
+    top:87%;
+    left:32%;
+    width:36%;
+    /*background:yellow;*/
+}
+
+.forgotPasswordBtnSec {
+    position:absolute;
+    text-align:center;
+    bottom:2%;
+    left:32%;
+    width:36%;
+    color:#ffffff;
+    text-decoration:underline;
+    font-size:120% !important;
+    text-align:center;
+    font-family:'MrEavesSan', sans-serif !important;
+    /*background:yellow;*/
+}
+
+.optionsBtnSec  {
+    
+    position:absolute;
+    text-align:center;
+    top:94%;
+    left:30%;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    color:#ffffff;
+    width:40%;
+    height:5%;
+    /*background:yellow;*/
+    opacity:0.4;
+    
+}
+
+.myOptionsSocialH {
+    width:93%;
+    padding-left:4%;
+    padding-right:4%;
+    position:absolute;
+    top:9.1%;
+    padding-top:5%;
+    padding-bottom:3%;
+    background:#333e44;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:150%;
+}
+
+.myOptionsPrefH {
+    width:93%;
+    padding-left:4%;
+    padding-right:4%;
+    position:absolute;
+    top:29%;
+    padding-top:4%;
+    padding-bottom:4%;
+    background:#333e44;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:150%;
+}
+
+.myOptionsSupportH {
+    width:93%;
+    padding-left:4%;
+    padding-right:4%;
+    position:absolute;
+    top:61%;
+    padding-top:4%;
+    padding-bottom:4%;
+    background:#333e44;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:150%;
+}
+
+.myOptionsHonest {
+    width:94%;
+    padding-left:4%;
+    padding-right:3%;
+    position:absolute;
+    top:69%;
+    color:#000000 !important;
+    background:white;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110%;
+    border-bottom: 1px solid #221f1f;
+}
+
+.myOptionsBlog {
+    width:94%;
+    padding-left:4%;
+    padding-right:3%;
+    position:absolute;
+    top:75%;
+    color:#000000 !important;
+    background:white;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110%;
+    border-bottom: 1px solid #221f1f;
+}
+
+.myOptionsTerms {
+    width:94%;
+    padding-left:4%;
+    padding-right:3%;
+    position:absolute;
+    top:81%;
+    color:#000000 !important;
+    background:white;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110%;
+    border-bottom: 1px solid #221f1f;
+}
+
+.myOptionsPrivacy {
+    width:94%;
+    padding-left:4%;
+    padding-right:3%;
+    position:absolute;
+    top:87%;
+    color:#000000 !important;
+    background:white;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110%;
+}
+
+.myOptionsLogoutH {
+    width:93%;
+    padding-left:4%;
+    padding-right:4%;
+    position:absolute;
+    top:93%;
+    padding-top:4%;
+    padding-bottom:4%;
+    background:#333e44;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:150%;
+}
+
+.myOptionsFacebook {
+    width:94%;
+    padding-left:4%;
+    padding-right:3%;
+    position:absolute;
+    top:17%;
+    color:#000000 !important;
+    background:white;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110%;
+    border-bottom: 1px solid #221f1f;
+}
+
+.settingsArrowImg {
+    
+}
+
+.myOptionsTwitter {
+    width:94%;
+    padding-left:4%;
+    padding-right:3%;
+    position:absolute;
+    top:23%;
+    color:#000000 !important;
+    background:white;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110%;
+}
+
+.myOptionsEmail {
+    width:94%;
+    padding-left:4%;
+    padding-right:3%;
+    position:absolute;
+    top:37%;
+    color:#000000 !important;
+    background:white;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110%;
+    border-bottom: 1px solid #221f1f;
+}
+
+.myOptionsBirthday {
+    width:94%;
+    padding-left:4%;
+    padding-right:3%;
+    position:absolute;
+    top:43%;
+    color:#000000 !important;
+    background:white;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110%;
+    border-bottom: 1px solid #221f1f;
+}
+
+.myOptionsZipcode {
+    width:94%;
+    padding-left:4%;
+    padding-right:3%;
+    position:absolute;
+    top:49%;
+    color:#000000 !important;
+    background:white;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110%;
+    border-bottom: 1px solid #221f1f;
+}
+
+.myOptionsUsername {
+    width:94%;
+    padding-left:4%;
+    padding-right:3%;
+    position:absolute;
+    top:55%;
+    color:#000000 !important;
+    background:white;
+    padding-top:2%;
+    padding-bottom:2%;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:110%;
+
+}
+
+.myTeaNot {
+    width:100%;
+    float:left;
+    min-height:50px;
+    border-top:1px solid #c8c7c7;
+    border-bottom:1px solid #c8c7c7;
+    overflow-y:auto;
+    color:#bdbdbc;
+    font-size:125%;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+.myGFDiv {
+    width:100%;
+    float:left;
+    height:70px;
+    border-top:1px solid #c8c7c7;
+    border-bottom:1px solid #c8c7c7;
+    overflow-y:auto;
+    color:#bdbdbc;
+    font-size:110%;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+}
+
+.myStylistDiv {
+    width:100%;
+    float:left;
+    height:100px;
+    overflow-y:auto;
+    border-top:1px solid #c8c7c7;
+    border-bottom:1px solid #c8c7c7;
+    overflow-y:auto;
+    color:#bdbdbc;
+    font-size:110%;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+}
+
+.myProductsDiv {
+    width:100%;
+    float:left;
+    height:85px;
+    overflow-y:auto;
+    border-top:1px solid #c8c7c7;
+    border-bottom:1px solid #c8c7c7;
+    overflow-y:auto;
+    color:#bdbdbc;
+    font-size:110%;
+    font-family:'MrEavesSan', sans-serif !important;
+    text-overflow:ellipsis !important;
+    overflow:hidden !important;
+}
+
+img.teaUserPic {
+    position:relative;
+    float:left;
+    width:15%;
+    margin-left:2%;
+    margin-top:2%;
+}
+
+img.productPictureDiv {
+    position:relative;
+    float:left;
+    width:20%;
+    margin-left:2%;
+    margin-top:2%;
+}
+
+
+.myProductsDetailsText {
+    margin-top:2%;
+    float:left;
+    width:75%;
+    margin-left:2%;
+    text-align:left;
+    color:#000000;
+    padding-bottom:2%;
+    line-height:18px;
+    font-size:110%;
+    max-height:80px;
+}
+
+img.teaNotificationPic {
+    position:relative;
+    float:right;
+    width:15%;
+    margin-right:2%;
+    margin-top:2%;
+}
+
+.teaDetailsTextPhoto {
+    margin-top:2%;
+    float:left;
+    width:60%;
+    margin-left:2%;
+    text-align:left;
+    color:#37424a;
+    padding-bottom:2%;
+}
+
+.stylistDetDiv {
+    float:left;
+    position:relative;
+    width:96%;
+    margin-left:2%;
+    margin-top:1%;
+    overflow-y:auto;
+}
+
+.stylistSpecialty {
+    width:48%;
+    margin-left:1%;
+    margin-right:1%;
+    float:left;
+    color:#000000;
+    font-size:90%;
+    font-family:'MrEavesSan', sans-serif !important;
+    text-align:left;
+    text-overflow:ellipsis !important;
+    overflow:hidden !important;
+    white-space: nowrap !important;
+}
+
+.stylistExperience {
+    width:48%;
+    margin-left:1%;
+    margin-right:1%;
+    float:left;
+    color:#000000;
+    font-size:90%;
+    font-family:'MrEavesSan', sans-serif !important;
+    text-align:left;
+}
+
+.stylistSalon {
+    width:48%;
+    margin-left:1%;
+    margin-right:1%;
+    float:left;
+    color:#000000;
+    font-size:90%;
+    font-family:'MrEavesSan', sans-serif !important;
+    text-align:left;
+    text-overflow:ellipsis !important;
+    overflow:hidden !important;
+    white-space: nowrap !important;
+}
+
+.stylistCityState {
+    width:48%;
+    margin-left:1%;
+    margin-right:1%;
+    float:left;
+    color:#000000;
+    font-size:90%;
+    font-family:'MrEavesSan', sans-serif !important;
+    text-align:left;
+    text-overflow:ellipsis !important;
+    overflow:hidden !important;
+    white-space: nowrap !important;
+}
+
+.teaDetailsText {
+    margin-top:2%;
+    float:left;
+    width:79%;
+    margin-left:2%;
+    text-align:left;
+    color:#37424a;
+    padding-bottom:2%;
+}
+
+
+.myGFDetailsText {
+    margin-top:2%;
+    float:left;
+    width:40%;
+    margin-left:2%;
+    text-align:left;
+    color:#37424a;
+    padding-bottom:2%;
+    line-height:18px;
+}
+
+.myGFBtnDiv {
+    width:35%;
+    float:right;
+    margin-right:2%;
+    text-align:center;
+    background:transparent;
+    margin-top:8%;
+}
+
+img.friendBtnBG {
+    width:100%;
+    background:transparent;
+    float:left;
+}
+
+.loginButtons{
+    width:100%;
+    position:absolute;
+    top:65%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    
+}
+
+
+.loginButtons{
+    width:100%;
+    position:absolute;
+    top:65%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    
+}
+
+.loginButton2{
+    width:48%;
+    height:45px;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:5%;
+}
+
+.registerButton2{
+    width:56%;
+    height:45px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+div.signupcontainer {
+    position:relative;
+    width:100%;
+    height:100%;
+    background:#efefef;
+}
+
+.fullNameSection{
+    width:80%;
+    height:45px;
+    position:absolute;
+    top:19%;
+    margin-left:6%;
+}
+
+input.loginfield {
+
+    width:82% !important;
+    text-align:center !important;
+    background: transparent url('../img/my-inputBG.png') no-repeat bottom right !important;
+    background-size: cover !important;
+    border: 1px solid rgba(0,0,0,.60);
+    outline: none !important;
+    font-weight:bold !important;
+    font-size:130% !important;
+    color:#bdbdbc !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    padding-top:4% !important;
+    padding-bottom:4% !important;
+    margin-top:2% !important;
+}
+
+input.loginfield::-webkit-input-placeholder {
+    font-size:130% !important;
+    color:#bdbdbc;
+        text-align:center !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.loginfield:-moz-placeholder {
+    font-size:130% !important;
+    color:#bdbdbc;
+        text-align:center !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+
+.birthDayPholder {
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#ffffff;
+    position:absolute;
+    top:39%;
+    left:5%;
+    width:90%;
+    font-size:155% !important;
+    text-align:center;
+}
+
+
+div.stylistBtn {
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#aeafaf;
+    position:absolute;
+    top:77% !important;
+    left:5%;
+    width:90%;
+    font-size:195% !important;
+    text-align:center;
+}
+/* Drop Down Styling */
+.findFriendsDropDown {
+    position:absolute;
+    top:17% !important;
+    background: rgba(0, 0, 0, .65);
+    width:82%;
+    left:9.5%;
+    z-index:500;
+    overflow-x:hidden;
+    overflow-y:auto;
+    text-align:left;
+    list-style-type: none;
+}
+
+.userSearch {
+    width:100%;
+    border-bottom:1px solid rgba(255, 255, 255, .45);
+    float:left;
+    height:40px;
+    
+}
+
+.userSearchContent {
+    width:90%;
+    float:left;
+    margin-right:5%;
+    height:35px;
+    color:#ffffff;
+    margin-top:2px;
+}
+
+.msgSearchImg {
+    margin-top:5px;
+    margin-left:5px;
+}
+
+/* END SEARCH DRoP DoWN */
+
+
+input.stylistSalonSU {
+    position:absolute;
+    top:55%;
+    left:10%;
+    
+    width:76%;
+    text-align:center;
+    background: transparent url('../img/my-inputBG.png') no-repeat bottom right !important;
+    background-size: cover !important;
+    border: 1px solid rgba(255,255,255,.60) !important;
+    outline: none !important;
+    font-size:140% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+    
+}
+
+input.stylistSalonSU::-webkit-input-placeholder {
+    font-size:120% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.stylistSalonSU:-moz-placeholder {
+    font-size:120% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+
+div.stylistDetailDiv1 {
+    position:absolute;
+    top:15%;
+    left:5%;
+    width:90%;
+    font-size:100% !important;
+    text-align:center;
+    
+    background: transparent url('../img/my-inputBG.png') no-repeat bottom right !important;
+    background-size: cover !important;
+    border: none !important;
+    outline: none !important;
+    font-size:140% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+
+}
+
+div.stylistDetailDiv2 {
+    position:absolute;
+    top:34%;
+    left:5%;
+    width:90%;
+    font-size:100% !important;
+    text-align:center;
+    
+    background: transparent url('../img/my-inputBG.png') no-repeat bottom right !important;
+    background-size: cover !important;
+    border: none !important;
+    outline: none !important;
+    font-size:140% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+    
+}
+
+input.stylistDetailDiv2::-webkit-input-placeholder, input.stylistDetailDiv1::-webkit-input-placeholder {
+    font-size:140% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.stylistDetailDiv2:-moz-placeholder, input.stylistDetailDiv1:-moz-placeholder {
+    font-size:140% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+.stylistCheck {
+    
+    background:transparent;
+    width:8%;
+    margin-top:-3%;
+    margin-left:1%;
+    text-align:center;
+    display:none;
+    
+}
+
+.submitSignupBtn {
+    
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#ffffff;
+    position:absolute;
+    top:80%;
+    left:5%;
+    width:90%;
+    font-size:170% !important;
+    text-align:center;
+    
+}
+
+
+.signupBirthday {
+    position:absolute;
+    top:48%;
+    left:11%;
+    text-align:center;
+    width:73%;
+    text-align:center;
+    border: 1px solid rgba(0,0,0,.60);
+    outline: none !important;
+    font-size:140% !important;
+    color:#ffffff;
+    font-family:'MrEavesSan', sans-serif !important;
+
+    
+}
+
+input.signupBirthday::-webkit-input-placeholder {
+    font-size:120% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.signupBirthday:-moz-placeholder {
+    font-size:120% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+input.signupZip {
+    position:absolute;
+    top:63%;
+    left:11%;
+    text-align:center;
+    width:73%;
+    text-align:center;
+    background: transparent url('../img/my-inputBG.png') no-repeat bottom right !important;
+    background-size: cover !important;
+    border: 1px solid rgba(0,0,0,.60);
+    outline: none !important;
+    font-size:160% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+    
+}
+
+input.signupZip::-webkit-input-placeholder {
+    font-size:160% !important;
+        color:#aeafaf !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.signupZip:-moz-placeholder {
+    font-size:160% !important;
+        color:#aeafaf !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+/*Change Prefs */
+input.changePref {
+    
+    position:absolute;
+    top:20%;
+    left:10%;
+    width:80%;
+    text-align:center;
+    background:url('../img/signUpInput.png') center center !important;
+    background-size: cover !important;
+    border: none !important;
+    outline: none !important;
+    font-size:135% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+}
+
+.changePrefUpdateBtnDiv {
+    position:absolute;
+    top:30%;
+    left:25%;
+    width:50%;
+    background:transparent;
+    border-radius:2px;
+}
+
+input.changePref::-webkit-input-placeholder {
+    font-size:135% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.changePref:-moz-placeholder {
+    font-size:135% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+input.oldPassword {
+    
+    position:absolute;
+    top:20%;
+    left:10%;
+    width:80%;
+    text-align:center;
+    background:url('../img/signUpInput.png') center center !important;
+    background-size: cover !important;
+    border: none !important;
+    outline: none !important;
+    font-size:135% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+}
+
+input.oldPassword::-webkit-input-placeholder {
+    font-size:135% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.oldPassword:-moz-placeholder {
+    font-size:135% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+input.forgotPasswordEmail {
+    
+    position:absolute;
+    top:25%;
+    left:5%;
+    width:90%;
+    text-align:center;
+    background:url('../img/signUpInput.png') center center !important;
+    background-size: cover !important;
+    border: none !important;
+    outline: none !important;
+    font-size:125% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+}
+
+input.forgotPasswordEmail::-webkit-input-placeholder {
+    font-size:125% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.forgotPasswordEmail:-moz-placeholder {
+    font-size:125% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+input.newPassword {
+    
+    position:absolute;
+    top:30%;
+    left:10%;
+    width:80%;
+    text-align:center;
+    background:url('../img/signUpInput.png') center center !important;
+    background-size: cover !important;
+    border: none !important;
+    outline: none !important;
+    font-size:135% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+}
+
+input.newPassword::-webkit-input-placeholder {
+    font-size:135% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.newPassword:-moz-placeholder {
+    font-size:135% !important;
+    color:#000000 !important;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+.changePasswordUpdate {
+    position:absolute;
+    top:38%;
+    left:25%;
+    width:50%;
+    background:transparent;
+    border-radius:2px;
+}
+
+
+/* Sign up fields */
+input.signupFullname {
+    
+    position:absolute;
+    top:55%;
+    left:20%;
+    width:58%;
+    text-align:center;
+    background: url('../img/signUpInput.png') no-repeat bottom right !important;
+    background-size: contain !important;
+    border: 1px solid rgba(0,0,0,.60);
+    outline: none !important;
+    font-size:135% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+}
+
+input.signupFullname::-webkit-input-placeholder {
+    font-size:135% !important;
+    color:#a9afac;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.signupFullname:-moz-placeholder {
+    font-size:135% !important;
+    color:#a9afac;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+input.signupEmail {
+    
+    position:absolute;
+    top:63%;
+    left:20%;
+    width:58%;
+    text-align:center;
+    background: transparent url('../img/signUpInput.png') no-repeat bottom right !important;
+    background-size: contain !important;
+    border: none !important;
+    outline: none !important;
+    font-size:135% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+}
+
+input.signupEmail::-webkit-input-placeholder {
+    font-size:135% !important;
+    color:#a9afac;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.signupEmail:-moz-placeholder {
+    font-size:135% !important;
+    color:#a9afac;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+input.signupUsername {
+    
+    position:absolute;
+    top:58%;
+    left:20%;
+    width:58%;
+    text-align:center;
+    background: transparent url('../img/signUpInput.png') no-repeat bottom right !important;
+    background-size: contain !important;
+    border: none !important;
+    outline: none !important;
+    font-size:135% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+}
+
+input.signupUsername::-webkit-input-placeholder {
+    font-size:135% !important;
+    color:#a9afac;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.signupUsername:-moz-placeholder {
+    font-size:135% !important;
+    color:#a9afac;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+input.signupPassword {
+    
+    position:absolute;
+    top:79%;
+    left:20%;
+    width:58%;
+    text-align:center;
+    background: transparent url('../img/signUpInput.png') no-repeat bottom right !important;
+    background-size: contain !important;
+    border: none !important;
+    outline: none !important;
+    font-size:135% !important;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    
+}
+
+input.signupPassword::-webkit-input-placeholder {
+    font-size:135% !important;
+    color:#a9afac;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+input.signupPassword:-moz-placeholder {
+    font-size:135% !important;
+    color:#a9afac;
+    font-family:'MrEavesSan', sans-serif !important;
+}
+
+.acceptTermsDiv {
+    position:absolute;
+    width:88%;
+    top:92%;
+    left:6%;
+}
+
+input.agreeToTerms {
+    vertical-align:middle;
+    margin-right:2px !important;
+}
+
+.agreeToTerms-label {
+    color:#ffffff;
+    font-size:123% !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    margin-top:1px;
+    margin-right:2px;
+    float:right;
+}
+
+div.next-btn {
+    top:30%;
+    width:34%;
+    height:8%;
+    margin-left:25%;
+    text-align:center;
+    position:absolute;
+    background: transparent url('../img/signupBtn.png') no-repeat bottom right !important;
+    background-size: contain !important;
+}
+
+div.signupBtn1 {
+    top:77%;
+    width:34%;
+    height:8%;
+    margin-left:33%;
+    text-align:center;
+    position:absolute;
+    background: transparent url('../img/signupBtn.png') no-repeat bottom right !important;
+    background-size: contain !important;
+}
+
+div.signupBtn2 {
+    top:89%;
+    width:46%;
+    height:6%;
+    margin-left:26%;
+    text-align:center;
+    position:absolute;
+    background: transparent url('../img/doneNewBtn.png') no-repeat bottom right !important;
+    background-size: contain !important;
+}
+
+/* END signup fields */
+
+
+.emailAddressSection{
+    width:80%;
+    height:45px;
+    position:absolute;
+    top:30%;
+    margin-left:6%;
+}
+
+.usernameSection{
+    width:80%;
+    height:45px;
+    position:absolute;
+    top:42%;
+    margin-left:6%;
+}
+
+.passwordSection{
+    width:80%;
+    height:45px;
+    position:absolute;
+    top:54%;
+    margin-left:6%;
+}
+
+.joinButtonSection{
+    width:80%;
+    height:45px;
+    position:absolute;
+    top:67%;
+    margin-left:6%;
+}
+
+.joinButton2{
+    width:45%;
+    height:40px;
+}
+
+.backToLogin{
+    width:80%;
+    height:45px;
+    position:absolute;
+    top:79%;
+    margin-left:6%;
+    color:#fff;
+    font-size:36px;
+}
+
+.backToRegister{
+    width:80%;
+    height:45px;
+    position:absolute;
+    top:50%;
+    margin-left:6%;
+    color:#fff;
+    font-size:36px;
+}
+
+.usernameLoginSection{
+    width:80%;
+    height:45px;
+    position:absolute;
+    top:18%;
+    margin-left:6%;
+    color:#fff;
+    font-size:36px;
+}
+
+.passwordLoginSection{
+    width:80%;
+    height:45px;
+    position:absolute;
+    top:30%;
+    margin-left:6%;
+    color:#fff;
+    font-size:36px;
+}
+
+.loginButtonSection{
+    width:80%;
+    height:45px;
+    position:absolute;
+    top:41%;
+    margin-left:6%;
+}
+
+/* MadameYou Specific Styling Below */
+/* Header Bar Styling */
+.newHubHeader {
+    width:100%;
+    height:60px;
+    background:#00a79d;
+    color: #FFFFFF;
+    float:left;
+}
+
+.menuHeadLeft {
+    height:100%;
+    width:60px;
+    float:left;
+    text-align:center;
+}
+
+.menuHeadRight {
+	height:100%;
+	width:60px;
+	float:right;
+    text-align:center;
+    
+}
+
+img.headerMenuIcon {
+    margin-left:auto;
+	margin-right:auto;
+    margin-top:10px;
+    height:40px;
+    width:40px;
+    
+}
+
+.headerCenterIcon {
+    height:100%;
+    width:60px;
+    float:left;
+    margin-left:70px;
+}
+
+img.headerMyIcon {
+    width:50px;
+    height:50px;
+    margin-top:5px;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.addStyleBody {
+    top:60px;
+    bottom:.2px;
+    left:0px;
+    right:0px;
+    width:100%;
+    position:absolute;
+    z-index:3;
+    background:transparent;
+	margin-top: auto;
+	margin-bottom: auto;
+	text-align: center;
+}
+
+#addStyle-scroller, #menu-scroller {
+    overflow-y:auto;
+}
+
+.pageHeader {
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:200;
+    font-size:20px;
+    float:left;
+    text-align:center;
+    width:100%;
+    margin-top:15px;
+    color:#000000;
+}
+
+.floatLeftOverflowyAuto {
+    width:100%;
+    overflow-y:auto;
+    float:left;
+    
+}
+
+.beforeImageDiv {
+    width:260px;
+    overflow-y:auto;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+}
+
+.imageHeader {
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:200;
+    font-size:25px;
+    float:left;
+    text-align:center;
+    width:100%;
+    margin-top:15px;
+    color:#000000;
+}
+
+.uploadBeforeBtnText {
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:200;
+    font-size:35px;
+    margin-right:auto;
+    margin-left:auto;
+    text-align:center;
+    width:175px;
+    margin-top:65px;
+    color:#000000;
+    
+}
+
+.uploadBtnText  {
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:200;
+    font-size:25px;
+    margin-right:auto;
+    margin-left:auto;
+    text-align:center;
+    width:150px;
+    margin-top:25px;
+    margin-bottom:15px;
+    color:#000000;
+}
+
+.beforeImage {
+    width:230px;
+    height:230px;
+    float:left;
+    margin-top:15px;
+    margin-left:15px;
+    background:#f4f3f4;
+    text-align:center;
+}
+
+.actualBeforeImg {
+    width:230px;
+    height:230px;
+}
+
+.uploadBeforeBtn {
+    margin-left:auto;
+    margin-right:auto;
+    width:150px;
+    text-align:center;
+    line-height:30px;
+    height:30px;
+    font-size: 25px;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:300;
+    color:#ffffff;
+    background:#00a79d;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+    border-radius:20px;
+    padding:5px 10px 5px 10px;
+    margin-bottom:20px;
+}
+
+.saveChangesSubmit {
+    margin-left:auto;
+    margin-right:auto;
+    width:225px;
+    text-align:center;
+    line-height:30px;
+    height:50px;
+    font-size: 20px;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:300;
+    color:#ffffff;
+    background:#00a79d;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+    border-radius:20px;
+    padding:5px 10px 5px 10px;
+    margin-bottom:20px;
+}
+
+.skipBtnText {
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:200;
+    font-size:20px;
+    margin-right:auto;
+    margin-left:auto;
+    text-align:center;
+    width:160px;
+    margin-top:100px;
+    color:#000000;
+}
+
+.uploadSeparator {
+    width:100%;
+    height:1px;
+    border-bottom:1px solid #000;
+    float:left;
+}
+
+select.typeSelect {
+    background: #13a89e;
+    position: relative;
+    padding:3%;
+    color: #ffffff;
+    font-size: 25px;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:300;
+    text-align: center;
+    width: 60%;
+    margin-top:5%;
+    float:left;
+    margin-left:20%;
+}
+
+.beforeAfterPrevDiv {
+    
+    width:280px;
+    height:140px;
+    overflow-y:auto;
+    margin-top:10px;
+    margin-left:20px;
+    float:left;
+    
+}
+
+.beforeImgDiv {
+    width:136px;
+    height:136px;
+    float:left;
+    background:#f4f3f4;
+}
+
+.afterImgDiv {
+    width:136px;
+    height:136px;
+    float:right;
+    background:#f4f3f4;
+}
+
+textarea.newStyleDescription, input.newStyleDescription {
+    width:265px;
+    float:left;
+    margin-left:20px;
+    border:1px solid #00a79d;
+    background-color:#e7e7e7;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-size:15px;
+    color:#81888d;
+}
+ 
+
+.myNewStyleDoneBtn {
+    float:right;
+    height:75px;
+    width:75px;
+    margin-right:20px;
+    margin-top:15px;
+    margin-bottom:15px;
+    
+}
+
+.afterUploadImg {
+    width:160px;
+    height:160px;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:15px;
+    margin-bottom:10px;
+    background:#f4f3f4;
+    border:1px solid #728081;
+}
+
+.addStepsBtn {
+    margin-left:auto;
+    margin-right:auto;
+    width:150px;
+    text-align:center;
+    line-height:30px;
+    height:30px;
+    font-size: 20px;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:300;
+    color:#ffffff;
+    background:#00a79d;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+    border-radius:20px;
+    padding:5px 10px 5px 10px;
+    margin-bottom:20px;
+}
+
+.photoWrapper {
+    position:absolute; z-index:2;
+	top:60px; bottom:.2px; left:0px; right:0px;
+	width:100%;
+	text-align:center;
+    background:transparent;
+}
+
+#photoSection {
+    overflow-y:auto;
+    float:left;
+    width:100%;
+}
+
+.imageDiv {
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+	text-align:center;
+    overflow-y:auto;
+}
+
+#uploadedImg {
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	display:none;
+	max-width:100%;
+	max-height:98%;
+}
+
+.profilePageContainer {
+    float:left;
+    width:90%;
+    overflow-y:auto;
+    margin-left:5%;
+    margin-top:15px;
+}
+
+.profilePageHeader {
+    float:left;
+    width:100%;
+    height:120px;
+    
+}
+
+.profileUserPhotoDiv {
+    height:100px;
+    width:100px;
+    margin:10px 10px 10px 0px;
+    float:left;
+    background:#f4f3f4;
+}
+
+.userProfilePic {
+    width:100%;
+    height:100%;
+}
+
+.profileInfoDiv {
+    width:167px;
+    height:100%;
+    float:left;
+}
+
+.usernameDiv, .aboutmeBtnDiv {
+    height:30px;
+    line-height:30px;
+    float:left;
+    width:80%;
+    margin-left:10%;
+    margin-right:10%;
+    text-align:left;
+    font-family: 'IdealSans Thin', sans-serif;
+    color:#000000;
+    font-size:20px;
+    
+}
+
+.uploadBtnDiv {
+    height:70px;
+    width:80%;
+    margin-left:10%;
+    margin-right:10%;
+    float:left;
+}
+
+.uploadBeforeBtn {
+    margin-left:auto;
+    margin-right:auto;
+    width:100px;
+    text-align:center;
+    margin-top:8px;
+    line-height:30px;
+    height:30px;
+    font-size: 18px;
+    font-family: 'IdealSans Thin', sans-serif !important;
+    font-weight:300;
+    color:#ffffff;
+    background:#00a79d;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+    border-radius:20px;
+    padding:5px 10px 5px 10px;
+}
+
+.profileUserDataDiv {
+    width:100%;
+    float:left;
+    height:45px;
+    background:#f4f3f4;
+    margin-top:10px;
+    font-family:sans-serif !important;
+}
+
+.friendsCountDiv {
+    width:30%;
+    height:45px;
+    margin-left:2.5%;
+    margin-right:2.5%;
+    margin-top:5px;
+    float:left;
+    
+}
+
+.followersCountDiv{
+    width:30%;
+    height:45px;
+    margin-left:2.5%;
+    margin-top:5px;
+    float:left;
+}
+
+
+.looksCountDiv {
+    width:30%;
+    height:45px;
+    margin-top:5px;
+    float:right;
+    font-size: 14px;
+    font-weight:bold;
+    text-align:left;
+}
+
+.profInfoHeading, .profInfoCount {
+    float:left;
+    width:100%;
+    height:auto;
+    font-size: 10px;
+    font-weight:bold;
+    text-align:left;
+    font-family: Arial,Helvetica,sans-serif;
+    color:#000;
+}
+
+.userLooksDiv {
+    width:288px;
+    overflow-y:auto;
+    float:left;
+    margin-top:15px;
+}
+
+.userLooksRow {
+    width:100%;
+    float:left;
+    overflow-y:auto;
+}
+
+.userJourneyLeftDiv {
+    float:left;
+    width:130px;
+    height:78px;
+    
+}
+
+.userJourneyRightDiv {
+    float:right;
+    width:130px;
+    height:78px;
+}
+
+.userBigJourneyLeftDiv {
+    float:left;
+    width:140px;
+    height:140px;
+    margin-bottom:10px;
+    
+}
+
+.userBigJourneyRightDiv {
+    float:right;
+    width:135px;
+    height:135px;
+    margin-bottom:10px;
+    
+}
+
+img.profBeforeImg {
+    float:left;
+    height:63px;
+    width:63px;
+    background:#f4f3f4;
+}
+
+img.profAfterImg {
+    float:right;
+    height:63px;
+    width:63px;
+    background:#f4f3f4;
+}
+
+img.bigBeforeImg, img.bigAfterImg {
+width:140px;
+height:140px;
+float:left;
+}
+
+img.smallCancelView {
+    float:right;
+    margin-top:-137px;
+    margin-right:3px;
+    height:25px;
+    width:25px;
+}
+
+.profFacebookImgShareDiv {
+	float: left;
+	width: 41px;
+	height: 41px;
+	border: 1px solid #00a79d;
+	background: transparent;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.profTwitterImgShareDiv {
+	float: left;
+	width: 41px;
+	height: 41px;
+	margin-left: 2%;
+	border: 1px solid #00a79d;
+	background: transparent;
+	text-align: center;
+	margin-top: 5px;
+}
+
+img.profPhotoFBicon {
+	width: 25px;
+	height: 25px;
+	margin-top: 8px;
+}
+
+img.profPhotoTwitterIcon {
+	width: 25px;
+	height: 25px;
+	margin-top: 10px;
+}
+
+    
+    .profPhotoLikeDiv {
+	float: right;
+        overflow-y: auto;
+	width: 43px;
+        text-align: center;
+        margin-bottom:15px;
+    }
+    
+    .profPhotoThumbsUp {
+	width: 41px;
+	height: 41px;
+	border: 1px solid #C2C2C2;
+	float: left;
+	background: #212121;
+        text-align: center;
+    }
+    
+    .profPhotoHeartImg {
+	width: 100%;
+	height: 100%;
+    }
+
+    .profPhotoLikeCount {
+	color: #000;
+	float: right;
+	height: 43px;
+    line-height:43px;
+    font-family: 'IdealSans Thin', sans-serif !important;
+        font-size: 200%;
+        margin-right:5px;
+    }
+
+/* ---------- iPhone/iPod Only ---------- */
+@media only screen and (device-width: 320px) {
+.iphone-only { display: block; }
+}
+ 
+/* ---------- Retina Device Only ---------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+.retina-only { display: block; }
+}
+ 
+/* ---------- Non Retina Device Only ---------- */
+@media only screen and (-webkit-max-device-pixel-ratio: 1) {
+.non-retina-only { display: block; }
+
+div.stylistBtn {
+    font-family:'MrEavesSan', sans-serif !important;
+    color:#aeafaf;
+    position:absolute;
+    top:76.5% !important;
+    left:6%;
+    width:90%;
+    font-size:180% !important;
+    text-align:center;
+}
+
+div.signupBtn2 {
+    top:86% !important;
+    width:36%;
+    height:5%;
+    margin-left:31%;
+    text-align:center;
+    position:absolute;
+    background: transparent url('../img/doneNewBtn.png') no-repeat bottom right !important;
+    background-size: contain !important;
+}
+
+}
+ 
+/* ---------- Retina iPhone/iPod Only ---------- */
+@media only screen and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+.retina-iphone-only { display: block; }
+
+
+.signUpTypeDiv {
+    position:absolute;
+    top:46%;
+    width:66%;
+    left:17%;
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(35, 31, 32, .39);
+    box-shadow: 1px 1px 1px 1px rgba(35, 31, 32, .39);
+    background:transparent;
+    border-radius:2px;
+}
+
+div.signupBtn2 {
+    top:85%;
+    width:46%;
+    height:6%;
+    margin-left:27%;
+    text-align:center;
+    position:absolute;
+    background: transparent url('../img/doneNewBtn.png') no-repeat bottom right !important;
+    background-size: contain !important;
+}
+
+.myWrapperStd {
+    position:absolute; z-index:1;
+	top:11%; bottom:.2px; left:0px; right:0px;
+	width:100%;
+    max-width:100%;
+	margin-top:auto;
+	margin-bottom:auto;
+	text-align:center;
+    overflow-y:auto;
+    overflow-x:none;
+    background:transparent;
+    
+}
+
+}
+ 
+/* ---------- Non Retina iPhone/iPod Only ---------- */
+@media only screen and (device-width: 320px) and (-webkit-max-device-pixel-ratio: 1) {
+.myOptionsSocialH {
+    width:93%;
+    padding-left:4%;
+    padding-right:4%;
+    position:absolute;
+    top:10.5%;
+    padding-top:2%;
+    padding-bottom:4%;
+    background:#333e44;
+    color:#ffffff !important;
+    font-family:'MrEavesSan', sans-serif !important;
+    font-size:150%;
+}
+
+.signUpTypeDiv {
+    position:absolute;
+    top:38%;
+    width:66%;
+    left:17%;
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(35, 31, 32, .39);
+    box-shadow: 1px 1px 1px 1px rgba(35, 31, 32, .39);
+    background:transparent;
+    border-radius:2px;
+}
+
+.forgotPasswordBtnSec {
+    position:absolute;
+    text-align:center;
+    top:87%;
+    left:32%;
+    width:36%;
+    color:#ffffff;
+    text-decoration:underline;
+    font-size:120% !important;
+    text-align:center;
+    font-family:'MrEavesSan', sans-serif !important;
+    /*background:yellow;*/
+}
+
+img.signUpBtnSec3 {
+    position:absolute;
+    text-align:center;
+    top:87%;
+    left:34%;
+    width:32%;
+    /*background:yellow;*/
+}
+
+img.loginBtnSec3 {
+    position:absolute;
+    text-align:center;
+    top:79%;
+    left:25%;
+    width:50%;
+    /*background:red;*/
+}
+
+img.signUpBtnSec3 {
+    position:absolute;
+    text-align:center;
+    top:87%;
+    left:34%;
+    width:32%;
+    /*background:yellow;*/
+}
+
+    .loginSection {
+        
+        position:absolute;
+        text-align:center;
+        top:58%;
+        font-family: 'IdealSans Thin', sans-serif !important;
+        color:#ffffff;
+        width:70%;
+        overflow-y:auto;
+        left:15%;
+        
+    }
+    
+    input.loginfield {
+        
+        width:78% !important;
+        text-align:center !important;
+        background: transparent url('../img/my-inputBG.png') no-repeat bottom right !important;
+        background-size: cover !important;
+        border: 1px solid rgba(0,0,0,.60);
+        outline: none !important;
+        font-weight:bold !important;
+        font-size:130% !important;
+        color:#bdbdbc !important;
+        font-family:'MrEavesSan', sans-serif !important;
+        padding-top:4% !important;
+        padding-bottom:4% !important;
+        margin-top:2% !important;
+        text-align: -webkit-center;
+    }
+    
+    input.loginfield::-webkit-input-placeholder {
+        font-size:130% !important;
+        color:#bdbdbc;
+        text-align:center !important;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    input.loginfield:-moz-placeholder {
+        font-size:130% !important;
+        color:#bdbdbc;
+        text-align:center !important;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    
+    input.loginfield::-moz-placeholder {  /* Firefox 19+ */
+        font-size:130% !important;
+        color:#bdbdbc;
+        text-align:center !important;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    
+    input.loginfield:-ms-input-placeholder {
+        font-size:130% !important;
+        color:#bdbdbc;
+        text-align:center !important;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    
+    .editProfUpload {
+        float:left;
+        margin-left:25%;
+        margin-top:0% !important;
+        width:50%;
+        background:transparent;
+        border-radius:2px;
+    }
+    
+    
+    div.uploadStyleDiv {
+        position:absolute;
+        top:69%;
+        width:80%;
+        left:11%;
+        background: transparent url('../img/chooseHairStyleSelectBG.png') no-repeat bottom right;
+        background-size: contain;
+        overflow-x:hidden; /* this hides the select's drop button */
+        overflow-y:auto;
+        padding:0;
+        margin:0;
+        
+        
+    }
+    
+    select.uploadLookHairstyle {
+        width:100% /* this percentage effectively extends the drop down button out of view */;
+        background-color:transparent /* this hides the select's background making any styling visible from the div */;
+        background-image:none;
+        -webkit-appearance: none /* this is required for Webkit browsers */;
+        border:none;
+        box-shadow:none;
+        font-size:120% !important;
+        color:#000000 !important;
+        font-family:'MrEavesSan', sans-serif !important;
+        overflow-y:auto !important;
+        margin-top:10px;
+        line-height:25px;
+    }
+    
+    
+    input.addLookCaption {
+        
+        position:absolute;
+        top:81%;
+        left:7%;
+        width:86%;
+        text-align:left;
+        
+        
+        font-size:120% !important;
+        color:#a9afac !important;
+        font-family:'MrEavesSan', sans-serif !important;
+        
+        -moz-box-shadow:inset 1px 1px 29px #777777;
+        -webkit-box-shadow:inset 1px 1px 29px #777777;
+        box-shadow:inset 1px 1px 29px #777777;
+        
+
+        
+
+    }
+    
+    input.addLookCaption::-webkit-input-placeholder {
+        font-size:120% !important;
+        color:#a9afac;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    input.addLookCaption:-moz-placeholder {
+        font-size:120% !important;
+        color:#a9afac;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    
+    
+    img.lookUploadBtn {
+        top:90%;
+        position:absolute;
+        width:42%;
+        left:30%;
+    }
+    
+    img.doneUploadBtn {
+        top:95%;
+        position:absolute;
+        width:42%;
+        left:29%;
+    }
+    
+    .leaveCommentHead {
+        text-align:left;
+        top:20%;
+        position:absolute;
+        width:90%;
+        left:5%;
+        /*background:red;*/
+        /*opacity:0.4;*/
+        font-family:'MrEavesSan', sans-serif !important;
+        color:#000000 !important;
+        font-size:145% !important;
+    }
+    
+    textarea.leaveAComment {
+        color:#000000 !important;
+        font-family:'MrEavesSan', sans-serif !important;
+        font-size:110% !important;
+        top:27%;
+        position:absolute;
+        left:5%;
+        width:86%;
+        -webkit-box-shadow: inset -1px 1px px 3px rgba(35, 31, 32, .50);
+        box-shadow: inset -1px 1px 2px 3px rgba(35, 31, 32, .50);
+    }
+    
+    .leaveCommentChangePrefUpdateBtnDiv {
+        position:absolute;
+        top:45%;
+        left:25%;
+        width:50%;
+        background:transparent;
+        border-radius:2px;
+    }
+    
+    div.signupBtn1 {
+        top:80%;
+        width:32%;
+        height:8%;
+        margin-left:34%;
+        text-align:center;
+        position:absolute;
+        background: transparent url('../img/signupBtn.png') no-repeat bottom right !important;
+        background-size: contain !important;
+    }
+
+    
+    div.signupBtn2 {
+        top:82%;
+        width:46%;
+        height:6%;
+        margin-left:27%;
+        text-align:center;
+        position:absolute;
+        background: transparent url('../img/doneNewBtn.png') no-repeat bottom right !important;
+        background-size: contain !important;
+    }
+    
+    .myWrapperStd {
+        position:absolute; z-index:1;
+        top:12%; bottom:.2px; left:0px; right:0px;
+        width:100%;
+        max-width:100%;
+        margin-top:auto;
+        margin-bottom:auto;
+        text-align:center;
+        overflow-y:auto;
+        overflow-x:none;
+        background:transparent;
+        
+    }
+}
+
+/* iPhone 4 retina portrait */
+@media (device-height: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation:portrait) {
+    #iphone4_retina_portait{
+        display: block;
+    }
+    
+    .myOptionsSocialH {
+        width:93%;
+        padding-left:4%;
+        padding-right:4%;
+        position:absolute;
+        top:9.7%;
+        padding-top:3%;
+        padding-bottom:3%;
+        background:#333e44;
+        color:#ffffff !important;
+        font-family:'MrEavesSan', sans-serif !important;
+        font-size:150%;
+    }
+    
+    .myWrapperStd {
+        top:12% !important;
+    }
+    
+    .signUpTypeDiv {
+        position:absolute;
+        top:38%;
+        width:66%;
+        left:17%;
+        -webkit-box-shadow: 1px 1px 1px 1px rgba(35, 31, 32, .39);
+        box-shadow: 1px 1px 1px 1px rgba(35, 31, 32, .39);
+        background:transparent;
+        border-radius:2px;
+    }
+    
+    
+    
+    .loginSection {
+        
+        position:absolute;
+        text-align:center;
+        top:58%;
+        font-family: 'IdealSans Thin', sans-serif !important;
+        color:#ffffff;
+        width:70%;
+        overflow-y:auto;
+        left:15%;
+        
+    }
+    
+    input.loginfield {
+        
+        width:78% !important;
+        text-align:center !important;
+        background: transparent url('../img/my-inputBG.png') no-repeat bottom right !important;
+        background-size: cover !important;
+        border: 1px solid rgba(0,0,0,.60);
+        outline: none !important;
+        font-weight:bold !important;
+        font-size:130% !important;
+        color:#bdbdbc !important;
+        font-family:'MrEavesSan', sans-serif !important;
+        padding-top:4% !important;
+        padding-bottom:4% !important;
+        margin-top:2% !important;
+        text-align: -webkit-center;
+    }
+    
+    input.loginfield::-webkit-input-placeholder {
+        font-size:130% !important;
+        color:#bdbdbc;
+        text-align:center !important;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    input.loginfield:-moz-placeholder {
+        font-size:130% !important;
+        color:#bdbdbc;
+        text-align:center !important;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    
+    input.loginfield::-moz-placeholder {  /* Firefox 19+ */
+        font-size:130% !important;
+        color:#bdbdbc;
+        text-align:center !important;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    
+    input.loginfield:-ms-input-placeholder {
+        font-size:130% !important;
+        color:#bdbdbc;
+        text-align:center !important;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    
+    .editProfUpload {
+        float:left;
+        margin-left:25%;
+        margin-top:0% !important;
+        width:50%;
+        background:transparent;
+        border-radius:2px;
+    }
+    
+    
+    div.uploadStyleDiv {
+        position:absolute;
+        top:69%;
+        width:80%;
+        left:11%;
+        background: transparent url('../img/chooseHairStyleSelectBG.png') no-repeat bottom right;
+        background-size: contain;
+        overflow-x:hidden; /* this hides the select's drop button */
+        overflow-y:auto;
+        padding:0;
+        margin:0;
+        
+        
+    }
+    
+    select.uploadLookHairstyle {
+        width:100% /* this percentage effectively extends the drop down button out of view */;
+        background-color:transparent /* this hides the select's background making any styling visible from the div */;
+        background-image:none;
+        -webkit-appearance: none /* this is required for Webkit browsers */;
+        border:none;
+        box-shadow:none;
+        font-size:120% !important;
+        color:#000000 !important;
+        font-family:'MrEavesSan', sans-serif !important;
+        overflow-y:auto !important;
+        margin-top:10px;
+        line-height:25px;
+    }
+    
+    
+    input.addLookCaption {
+        
+        position:absolute;
+        top:81%;
+        left:7%;
+        width:86%;
+        text-align:left;
+        
+        font-size:120% !important;
+        color:#a9afac !important;
+        font-family:'MrEavesSan', sans-serif !important;
+        
+        
+        -moz-box-shadow:inset 1px 1px 29px #777777;
+        -webkit-box-shadow:inset 1px 1px 29px #777777;
+        box-shadow:inset 1px 1px 29px #777777;
+        
+        
+        
+    }
+    
+    input.addLookCaption::-webkit-input-placeholder {
+        font-size:120% !important;
+        color:#a9afac;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    input.addLookCaption:-moz-placeholder {
+        font-size:120% !important;
+        color:#a9afac;
+        font-family:'MrEavesSan', sans-serif !important;
+    }
+    
+    
+    img.lookUploadBtn {
+        top:90%;
+        position:absolute;
+        width:42%;
+        left:30%;
+    }
+    
+    img.doneUploadBtn {
+        top:95%;
+        position:absolute;
+        width:42%;
+        left:29%;
+    }
+    
+    .leaveCommentHead {
+        text-align:left;
+        top:20%;
+        position:absolute;
+        width:90%;
+        left:5%;
+        /*background:red;*/
+        /*opacity:0.4;*/
+        font-family:'MrEavesSan', sans-serif !important;
+        color:#000000 !important;
+        font-size:145% !important;
+    }
+    
+    textarea.leaveAComment {
+        color:#000000 !important;
+        font-family:'MrEavesSan', sans-serif !important;
+        font-size:110% !important;
+        top:27%;
+        position:absolute;
+        left:5%;
+        width:86%;
+        -webkit-box-shadow: inset -1px 1px px 3px rgba(35, 31, 32, .50);
+        box-shadow: inset -1px 1px 2px 3px rgba(35, 31, 32, .50);
+    }
+    
+    .leaveCommentChangePrefUpdateBtnDiv {
+        position:absolute;
+        top:45%;
+        left:25%;
+        width:50%;
+        background:transparent;
+        border-radius:2px;
+    }
+    
+    div.signupBtn1 {
+        top:80%;
+        width:32%;
+        height:8%;
+        margin-left:34%;
+        text-align:center;
+        position:absolute;
+        background: transparent url('../img/signupBtn.png') no-repeat bottom right !important;
+        background-size: contain !important;
+    }
+    
+    div.stylistBtn {
+        font-family:'MrEavesSan', sans-serif !important;
+        color:#aeafaf;
+        position:absolute;
+        top:77% !important;
+        left:5%;
+        width:90%;
+        font-size:185% !important;
+        text-align:center;
+    }
+    
+    div.signupBtn2 {
+        top:87%;
+        width:46%;
+        height:6%;
+        margin-left:27%;
+        text-align:center;
+        position:absolute;
+        background: transparent url('../img/doneNewBtn.png') no-repeat bottom right !important;
+        background-size: contain !important;
+    }
+    
+    
+    
+    .forgotPasswordBtnSec {
+        position:absolute;
+        text-align:center;
+        top:87%;
+        left:32%;
+        width:36%;
+        color:#ffffff;
+        text-decoration:underline;
+        font-size:120% !important;
+        text-align:center;
+        font-family:'MrEavesSan', sans-serif !important;
+        /*background:yellow;*/
+    }
+    
+    img.loginBtnSec3 {
+        position:absolute;
+        text-align:center;
+        top:79%;
+        left:25%;
+        width:50%;
+        /*background:red;*/
+    }
+    
+    img.signUpBtnSec3 {
+        position:absolute;
+        text-align:center;
+        top:87%;
+        left:34%;
+        width:32%;
+        /*background:yellow;*/
+    }
+    
+    
+}
+
+
+/* iPhone 5 or iPod Touch 5th generation, portrait */
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation:portrait) {
+    #iphone5_portait{
+        display: block;
+    }
+    
+    div.signupBtn2 {
+        top:86.5% !important;
+        width:46%;
+        height:6%;
+        margin-left:27%;
+        text-align:center;
+        position:absolute;
+        background: transparent url('../img/doneNewBtn.png') no-repeat bottom right !important;
+        background-size: contain !important;
+    }
+}

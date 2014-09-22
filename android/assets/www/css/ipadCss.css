@@ -1,0 +1,10 @@
+div.container {
+    position:absolute;
+}
+
+.loginBack{
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
